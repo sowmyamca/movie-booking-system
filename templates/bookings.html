@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bookings</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h2>All Bookings</h2>
+
+<table border="1">
+
+<tr>
+<th>Ticket ID</th>
+<th>Name</th>
+<th>Movie</th>
+<th>Seat</th>
+<th>Tickets</th>
+<th>Time</th>
+</tr>
+
+{% for b in bookings %}
+
+<tr>
+<td>{{ b.ticket_id }}</td>
+<td>{{ b.name }}</td>
+<td>{{ b.movie }}</td>
+<td>{{ b.seat }}</td>
+<td>{{ b.tickets }}</td>
+<td>{{ b.time }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/booking">Back to Booking</a>
+<a href="/booking">Back</a>
+<a href="/logout">Logout</a>
+
+</body>
+</html>
